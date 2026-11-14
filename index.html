@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>บริษัท ริช แอสเซท เมเนเจอร์ จำกัด | บริหารนิติบุคคลหมู่บ้านและคอนโด</title>
+<meta name="description" content="บริษัท ริช แอสเซท เมเนเจอร์ จำกัด รับบริหารนิติบุคคลหมู่บ้านจัดสรรและอาคารชุด ดูแลการเงิน บัญชี ส่วนกลาง และการประชุมใหญ่อย่างโปร่งใส">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b2a6f; --navy-2:#143a8f; --gold:#d4a017; --gold-soft:#fbf3d9;
+  --ink:#1d2433; --muted:#5b6475; --line:#e3e8f2; --bg:#f6f8fc; --white:#ffffff;
+  --radius:16px; --shadow:0 10px 30px rgba(11,42,111,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Sarabun','Noto Sans Thai','Tahoma',sans-serif;color:var(--ink);background:var(--white);line-height:1.75;font-size:17px}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+h1,h2,h3{line-height:1.35;margin:0 0 .5em;color:var(--navy)}
+h1{font-size:clamp(28px,4.5vw,46px);font-weight:800}
+h2{font-size:clamp(24px,3vw,34px);font-weight:700}
+h3{font-size:20px;font-weight:700}
+p{margin:0 0 1em}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+.section{padding:72px 0}
+.section.alt{background:var(--bg)}
+.eyebrow{display:inline-block;color:var(--gold);font-weight:700;letter-spacing:.02em;margin-bottom:8px}
+.lead{color:var(--muted);font-size:18px;max-width:680px}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand img{height:54px;width:auto}
+.nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+.nav a{display:block;padding:8px 16px;border-radius:999px;text-decoration:none;color:var(--ink);font-weight:600}
+.nav a:hover,.nav a.active{background:var(--navy);color:#fff}
+.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 12px;font:inherit;font-weight:700;color:var(--navy);cursor:pointer}
+
+/* buttons */
+.btn{display:inline-block;padding:13px 26px;border-radius:12px;font:inherit;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:.2s}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{background:var(--navy-2)}
+.btn-gold{background:var(--gold);color:#1d2433}
+.btn-gold:hover{filter:brightness(1.05)}
+.btn-outline{border-color:var(--navy);color:var(--navy);background:#fff}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+
+/* pages */
+.page{display:none;min-height:60vh}
+.page.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* hero */
+.hero{background:linear-gradient(135deg,#0b2a6f 0%,#143a8f 60%,#1d4fb0 100%);color:#fff;padding:88px 0}
+.hero h1,.hero h2,.hero h3{color:#fff}
+.hero .eyebrow{color:#f3d26b}
+.hero p{color:#dfe7ff;font-size:19px;max-width:620px}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero .btn-outline{background:transparent;color:#fff;border-color:#fff}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);padding:20px;text-align:center}
+.stat strong{display:block;font-size:30px;color:#f3d26b;font-weight:800}
+.stat span{font-size:15px;color:#dfe7ff}
+
+/* cards */
+.grid{display:grid;gap:22px;grid-template-columns:repeat(3,1fr);margin-top:36px}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.grid.four{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.icon{width:52px;height:52px;border-radius:14px;background:var(--gold-soft);color:var(--navy);display:grid;place-items:center;font-size:24px;margin-bottom:16px}
+.card p{color:var(--muted);margin:0}
+.step-no{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;margin-bottom:12px}
+
+/* tables & sample */
+.badge-sample{display:inline-block;background:var(--gold-soft);color:#7a5a00;font-size:13px;font-weight:700;padding:3px 10px;border-radius:999px;margin-left:6px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-top:28px}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff;font-weight:700}
+tr:last-child td{border-bottom:none}
+
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;color:var(--navy)}
+details p{margin:10px 0 0;color:var(--muted)}
+
+/* cta band */
+.cta{background:var(--navy);color:#fff;border-radius:var(--radius);padding:44px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cta h2{color:#fff;margin:0 0 6px;font-size:28px}
+.cta p{color:#dfe7ff;margin:0}
+
+/* about */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.badge-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.person{text-align:center}
+.avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#f3d26b;display:grid;place-items:center;font-size:30px;font-weight:800}
+.person p{color:var(--muted);margin:0;font-size:15px}
+
+/* contact */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:start}
+.info-item{display:flex;gap:14px;margin-bottom:22px}
+.info-item .icon{margin:0;flex-shrink:0}
+.info-item strong{display:block;color:var(--navy)}
+.info-item span{color:var(--muted)}
+form.quote{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.field.full{grid-column:1/-1}
+label{display:block;font-weight:600;margin-bottom:6px;color:var(--ink)}
+label em{color:#c0392b;font-style:normal}
+input,select,textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #cfd7e6;border-radius:10px;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--navy-2);outline-offset:0;border-color:transparent}
+textarea{min-height:110px;resize:vertical}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+.checks label{font-weight:500;display:flex;gap:8px;align-items:center;margin:0}
+.checks input{width:auto}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-msg{margin-top:14px;padding:12px 16px;border-radius:10px;display:none}
+.form-msg.ok{display:block;background:#e8f7ee;color:#17693a}
+.form-msg.err{display:block;background:#fdecea;color:#a12a1f}
+.note{font-size:14px;color:var(--muted);margin-top:10px}
+
+footer{background:#0a1d4d;color:#c9d3ea;padding:48px 0 28px;font-size:15px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+footer h4{color:#fff;margin:0 0 10px;font-size:16px}
+footer a{color:#c9d3ea;text-decoration:none}
+footer a:hover{color:#f3d26b}
+footer .logo{background:#fff;border-radius:12px;padding:8px;display:inline-block;margin-bottom:12px}
+footer .logo img{height:60px;width:auto}
+footer .bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:32px;padding-top:18px;text-align:center}
+
+/* responsive */
+@media (max-width:900px){
+  .grid,.grid.four{grid-template-columns:repeat(2,1fr)}
+  .split,.contact-wrap{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .menu-btn{display:block}
+  .nav ul{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;flex-direction:column;padding:12px 20px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  .nav ul.open{display:flex}
+  .nav a{padding:12px 14px}
+  .brand img{height:44px}
+  .grid,.grid.two,.grid.four{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .form-row,.checks{grid-template-columns:1fr}
+  .cta{padding:28px}
+  .section{padding:52px 0}
+  .hero{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand" aria-label="หน้าแรก"><img src="assets/logo-transparent.png" alt="บริษัท ริช แอสเซท เมเนเจอร์ จำกัด"></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">เมนู</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#home">หน้าแรก</a></li>
+        <li><a href="#services">บริการ</a></li>
+        <li><a href="#about">เกี่ยวกับเรา</a></li>
+        <li><a href="#contact">ติดต่อเรา</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<section id="home" class="page">
+  <div class="hero">
+    <div class="container">
+      <span class="eyebrow">บริการบริหารนิติบุคคล หมู่บ้านจัดสรรและอาคารชุด</span>
+      <h1>ดูแลทรัพย์สินของคุณ<br>เหมือนเป็นของเราเอง</h1>
+      <p>บริษัท ริช แอสเซท เมเนเจอร์ จำกัด รับบริหารนิติบุคคลตั้งแต่การเงิน บัญชี ดูแลส่วนกลาง ไปจนถึงการประชุมใหญ่ โปร่งใส ตรวจสอบได้ และอยู่เคียงข้างลูกบ้านทุกวัน</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#contact">ขอใบเสนอราคาฟรี</a>
+        <a class="btn btn-outline" href="#services">ดูบริการทั้งหมด</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>20+</strong><span>โครงการที่ดูแล <span class="badge-sample">ตัวอย่าง</span></span></div>
+        <div class="stat"><strong>5,000+</strong><span>ครัวเรือนในความดูแล <span class="badge-sample">ตัวอย่าง</span></span></div>
+        <div class="stat"><strong>24 ชม.</strong><span>รับแจ้งเหตุฉุกเฉิน <span class="badge-sample">ตัวอย่าง</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container center">
+      <span class="eyebrow">ทำไมต้องเลือกเรา</span>
+      <h2>บริหารงานด้วยความโปร่งใสและมาตรฐาน</h2>
+      <p class="lead">เราให้ความสำคัญกับการเงินที่ตรวจสอบได้ การสื่อสารที่ชัดเจน และการทำงานตามกฎหมายทุกขั้นตอน</p>
+      <div class="grid">
+        <div class="card"><div class="icon">💰</div><h3>โปร่งใสทางการเงิน</h3><p>มีรายงานรายรับ-รายจ่ายรายเดือน และงบการเงินประจำปีที่ลูกบ้านเข้าตรวจสอบได้</p></div>
+        <div class="card"><div class="icon">🛠️</div><h3>ดูแลใกล้ชิด</h3><p>ทีมประจำพื้นที่รับเรื่องและติดตามการซ่อมบำรุง พร้อมแจ้งความคืบหน้าให้ทราบ</p></div>
+        <div class="card"><div class="icon">📜</div><h3>ถูกต้องตามกฎหมาย</h3><p>ดำเนินงานตามข้อบังคับ พ.ร.บ.การจัดสรรที่ดิน และ พ.ร.บ.อาคารชุด อย่างครบถ้วน</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section alt">
+    <div class="container center">
+      <span class="eyebrow">ขั้นตอนการทำงาน</span>
+      <h2>เริ่มงานกับเราได้ง่ายใน 4 ขั้นตอน</h2>
+      <p class="lead">ตัวอย่างขั้นตอนการทำงาน สามารถปรับให้เหมาะกับโครงการของคุณได้</p>
+      <div class="grid four">
+        <div class="card"><span class="step-no">1</span><h3>รับข้อมูลโครงการ</h3><p>ตรวจสอบเอกสารนิติบุคคลและสภาพโครงการ</p></div>
+        <div class="card"><span class="step-no">2</span><h3>เสนอแผนและราคา</h3><p>จัดทำข้อเสนอที่ระบุขอบเขตงานและค่าใช้จ่ายชัดเจน</p></div>
+        <div class="card"><span class="step-no">3</span><h3>ส่งมอบงาน</h3><p>เริ่มบริหารพร้อมทีมงานและระบบรายงานที่ตกลงร่วมกัน</p></div>
+        <div class="card"><span class="step-no">4</span><h3>ดูแลต่อเนื่อง</h3><p>ประเมินผลและปรับปรุงงานทุกไตรมาส</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">ผลงานของเรา</span>
+        <h2>โครงการที่เราดูแล <span class="badge-sample">ข้อมูลตัวอย่าง</span></h2>
+      </div>
+      <table>
+        <thead><tr><th>โครงการ</th><th>ประเภท</th><th>จำนวนหน่วย</th><th>ปีที่เริ่มดูแล</th></tr></thead>
+        <tbody>
+          <tr><td>หมู่บ้านตัวอย่าง A</td><td>หมู่บ้านจัดสรร</td><td>250 หลัง</td><td>2565</td></tr>
+          <tr><td>คอนโดตัวอย่าง B</td><td>อาคารชุด</td><td>320 ห้อง</td><td>2563</td></tr>
+          <tr><td>หมู่บ้านตัวอย่าง C</td><td>หมู่บ้านจัดสรร</td><td>180 หลัง</td><td>2567</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0">
+    <div class="container">
+      <div class="cta">
+        <div><h2>พร้อมให้เราดูแลโครงการของคุณหรือยัง?</h2><p>กรอกแบบฟอร์มสั้นๆ ทีมงานจะติดต่อกลับพร้อมใบเสนอราคาโดยเร็ว</p></div>
+        <a class="btn btn-gold" href="#contact">ขอใบเสนอราคา</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="page">
+  <div class="section">
+    <div class="container center">
+      <span class="eyebrow">บริการของเรา</span>
+      <h2>ครบทุกงานบริหารนิติบุคคล</h2>
+      <p class="lead">เลือกบริการที่ต้องการ หรือให้เราจัดแพ็กเกจที่เหมาะกับขนาดโครงการของคุณ</p>
+      <div class="grid">
+        <div class="card"><div class="icon">🧾</div><h3>บัญชีและการเงิน</h3><p>จัดทำบัญชี ทำเรื่องเก็บค่าส่วนกลาง ติดตามหนี้ค้างชำระ และรายงานการเงินประจำเดือน</p></div>
+        <div class="card"><div class="icon">🏘️</div><h3>บริหารส่วนกลาง</h3><p>ดูแลสวน ถนน ไฟฟ้าส่วนกลาง ระบบประปา และพื้นที่สาธารณะให้พร้อมใช้งานเสมอ</p></div>
+        <div class="card"><div class="icon">🔧</div><h3>ซ่อมบำรุงและจัดซื้อ</h3><p>รับแจ้งซ่อม ประสานผู้รับเหมา เปรียบเทียบราคา และตรวจรับงานให้ได้คุณภาพ</p></div>
+        <div class="card"><div class="icon">🛡️</div><h3>รักษาความปลอดภัย</h3><p>บริหารทีมรักษาความปลอดภัย ระบบ CCTV และแผนรับมือเหตุฉุกเฉิน</p></div>
+        <div class="card"><div class="icon">🗳️</div><h3>การประชุมใหญ่</h3><p>เตรียมเอกสาร จัดประชุมใหญ่สามัญและวิสามัญ นับคะแนน และจัดทำรายงานการประชุม</p></div>
+        <div class="card"><div class="icon">📣</div><h3>สื่อสารกับลูกบ้าน</h3><p>ประกาศข่าวสาร ตอบข้อร้องเรียน และดูแลช่องทางแจ้งเรื่องออนไลน์</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section alt">
+    <div class="container center">
+      <span class="eyebrow">รูปแบบการให้บริการ</span>
+      <h2>เหมาะกับทุกประเภทที่อยู่อาศัย</h2>
+      <div class="grid two" style="text-align:left">
+        <div class="card"><h3>🏡 หมู่บ้านจัดสรร</h3><p>ดูแลทรัพย์สินส่วนกลาง ถนน สวน และระบบสาธารณูปโภค พร้อมจัดการค่าส่วนกลางและการประชุมใหญ่ตามข้อบังคับ</p></div>
+        <div class="card"><h3>🏢 อาคารชุด (คอนโดมิเนียม)</h3><p>ดูแลอาคาร ลิฟต์ ระบบดับเพลิง และพื้นที่ส่วนกลาง พร้อมบริหารกองทุนและงบประมาณประจำปี</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container center">
+      <span class="eyebrow">ขั้นตอนการทำงาน</span>
+      <h2>การทำงานของเรา</h2>
+      <div class="grid four">
+        <div class="card"><span class="step-no">1</span><h3>สำรวจโครงการ</h3><p>เข้าตรวจสภาพจริงและรับฟังความต้องการ</p></div>
+        <div class="card"><span class="step-no">2</span><h3>เสนอขอบเขตงาน</h3><p>ใบเสนอราคาพร้อม SLA และตารางเวลา</p></div>
+        <div class="card"><span class="step-no">3</span><h3>ลงมือบริหาร</h3><p>ทีมประจำพื้นที่และระบบรายงานรายเดือน</p></div>
+        <div class="card"><span class="step-no">4</span><h3>รายงานผล</h3><p>สรุปผลงานและแผนปีถัดไปให้คณะกรรมการ</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section alt">
+    <div class="container" style="max-width:820px">
+      <div class="center"><span class="eyebrow">คำถามที่พบบ่อย</span><h2>มีข้อสงสัย?</h2></div>
+      <details open><summary>ต้องใช้เวลาเตรียมตัวนานแค่ไหนก่อนเริ่มงาน?</summary><p>โดยทั่วไปใช้เวลาประมาณ 1–2 สัปดาห์ ขึ้นอยู่กับความพร้อมของเอกสารและขนาดโครงการ <span class="badge-sample">ตัวอย่าง</span></p></details>
+      <details><summary>ลูกบ้านสามารถตรวจสอบการเงินได้หรือไม่?</summary><p>ได้ เราจัดทำรายงานรายรับ-รายจ่ายรายเดือน และเปิดให้คณะกรรมการหรือลูกบ้านเข้าตรวจสอบตามข้อบังคับ <span class="badge-sample">ตัวอย่าง</span></p></details>
+      <details><summary>มีค่าใช้จ่ายอย่างไร?</summary><p>เราเสนอราคาแบบรายเดือนตามขอบเขตงานที่ตกลงกัน ไม่มีค่าธรรมเนียมแอบแฝง <span class="badge-sample">ตัวอย่าง</span></p></details>
+      <details><summary>รับแจ้งเหตุนอกเวลาทำการหรือไม่?</summary><p>มีช่องทางแจ้งเหตุฉุกเฉินนอกเวลาทำการ โปรดดูรายละเอียดในหน้าติดต่อเรา <span class="badge-sample">ตัวอย่าง</span></p></details>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="cta">
+        <div><h2>อยากได้ราคาประเมินสำหรับโครงการของคุณ?</h2><p>ส่งข้อมูลเบื้องต้นให้เราได้เลย ใช้เวลาไม่ถึง 1 นาที</p></div>
+        <a class="btn btn-gold" href="#contact">ขอใบเสนอราคา</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="page">
+  <div class="section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">เกี่ยวกับเรา</span>
+        <h2>บริษัทที่ยึดมั่นในความไว้วางใจ</h2>
+        <p class="lead">ริช แอสเซท เมเนเจอร์ ก่อตั้งขึ้นเพื่อให้การบริหารนิติบุคคลเป็นเรื่องง่ายสำหรับทุกฝ่าย ทั้งคณะกรรมการ เจ้าของโครงการ และลูกบ้าน</p>
+        <p style="color:var(--muted)">เราเชื่อว่าการบริหารที่ดีต้องโปร่งใส ตรวจสอบได้ และสื่อสารกันอย่างต่อเนื่อง ทุกโครงการที่เราดูแลจึงมีแผนงาน รายงาน และช่องทางติดต่อที่ชัดเจน <span class="badge-sample">ข้อความตัวอย่าง</span></p>
+      </div>
+      <div class="badge-box">
+        <img src="assets/logo-badge.png" alt="ตราบริษัท ริช แอสเซท เมเนเจอร์ จำกัด พร้อมเลขทะเบียนและที่อยู่">
+      </div>
+    </div>
+  </div>
+
+  <div class="section alt">
+    <div class="container center">
+      <span class="eyebrow">ค่านิยมองค์กร</span>
+      <h2>สิ่งที่เรายึดถือ</h2>
+      <div class="grid four">
+        <div class="card"><h3>ซื่อสัตย์</h3><p>รายงานตามความจริง ชี้แจงทุกบาททุกสตางค์</p></div>
+        <div class="card"><h3>รวดเร็ว</h3><p>ตอบรับเรื่องภายในวันทำการ และติดตามจนเสร็จ</p></div>
+        <div class="card"><h3>ใส่ใจ</h3><p>เข้าใจบริบทของแต่ละโครงการและลูกบ้าน</p></div>
+        <div class="card"><h3>พัฒนา</h3><p>ปรับปรุงงานอย่างต่อเนื่องจากข้อเสนอแนะ</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container center">
+      <span class="eyebrow">ทีมงาน</span>
+      <h2>ทีมผู้บริหารและผู้ดูแลโครงการ</h2>
+      <p class="lead">ข้อมูลตัวอย่าง กรุณาแก้ไขชื่อ ตำแหน่ง และรูปภาพให้เป็นข้อมูลจริง</p>
+      <div class="grid four">
+        <div class="card person"><div class="avatar">ก</div><h3>ชื่อ-นามสกุล</h3><p>กรรมการผู้จัดการ</p></div>
+        <div class="card person"><div class="avatar">ข</div><h3>ชื่อ-นามสกุล</h3><p>ผู้จัดการฝ่ายบัญชีและการเงิน</p></div>
+        <div class="card person"><div class="avatar">ค</div><h3>ชื่อ-นามสกุล</h3><p>ผู้จัดการโครงการ</p></div>
+        <div class="card person"><div class="avatar">ง</div><h3>ชื่อ-นามสกุล</h3><p>หัวหน้าฝ่ายซ่อมบำรุง</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="page">
+  <div class="section">
+    <div class="container">
+      <div class="center" style="margin-bottom:36px">
+        <span class="eyebrow">ติดต่อเรา</span>
+        <h2>ขอใบเสนอราคาหรือปรึกษาฟรี</h2>
+        <p class="lead">กรอกข้อมูลด้านล่าง ทีมงานจะติดต่อกลับภายในวันทำการถัดไป</p>
+      </div>
+      <div class="contact-wrap">
+        <div>
+          <div class="info-item"><div class="icon">📍</div><div><strong>ที่อยู่สำนักงาน</strong><span>39/5 หมู่ 5 ต.พิมลราช อ.บางบัวทอง จ.นนทบุรี 11110</span></div></div>
+          <div class="info-item"><div class="icon">📞</div><div><strong>โทรศัพท์</strong><span>0X-XXX-XXXX <span class="badge-sample">แก้ไขเบอร์จริง</span></span></div></div>
+          <div class="info-item"><div class="icon">✉️</div><div><strong>อีเมล</strong><span>info@example.com <span class="badge-sample">แก้ไขอีเมลจริง</span></span></div></div>
+          <div class="info-item"><div class="icon">🕘</div><div><strong>เวลาทำการ</strong><span>จันทร์ – ศุกร์ 08:30 – 17:30 น.</span></div></div>
+          <div class="info-item"><div class="icon">🆔</div><div><strong>เลขทะเบียนนิติบุคคล</strong><span>0125569042066</span></div></div>
+        </div>
+
+        <form class="quote" id="quoteForm" novalidate>
+          <h3>แบบฟอร์มขอใบเสนอราคา</h3>
+          <div class="form-row">
+            <div class="field"><label for="name">ชื่อ-นามสกุล <em>*</em></label><input id="name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="phone">เบอร์โทรศัพท์ <em>*</em></label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="field"><label for="email">อีเมล</label><input id="email" name="email" type="email" autocomplete="email"></div>
+            <div class="field"><label for="units">จำนวนหน่วย/ห้อง/หลัง</label><input id="units" name="units" inputmode="numeric"></div>
+            <div class="field full"><label for="project">ชื่อโครงการหรือนิติบุคคล <em>*</em></label><input id="project" name="project" required></div>
+            <div class="field full">
+              <label for="type">ประเภทโครงการ</label>
+              <select id="type" name="type">
+                <option value="">— เลือก —</option>
+                <option>หมู่บ้านจัดสรร</option>
+                <option>อาคารชุด (คอนโด)</option>
+                <option>อาคารพาณิชย์ / อื่นๆ</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label>บริการที่สนใจ</label>
+              <div class="checks">
+                <label><input type="checkbox" name="services" value="บัญชีและการเงิน"> บัญชีและการเงิน</label>
+                <label><input type="checkbox" name="services" value="บริหารส่วนกลาง"> บริหารส่วนกลาง</label>
+                <label><input type="checkbox" name="services" value="ซ่อมบำรุง"> ซ่อมบำรุง</label>
+                <label><input type="checkbox" name="services" value="รักษาความปลอดภัย"> รักษาความปลอดภัย</label>
+                <label><input type="checkbox" name="services" value="การประชุมใหญ่"> การประชุมใหญ่</label>
+                <label><input type="checkbox" name="services" value="อื่นๆ"> อื่นๆ</label>
+              </div>
+            </div>
+            <div class="field full"><label for="message">รายละเอียดเพิ่มเติม</label><textarea id="message" name="message" placeholder="เช่น ต้องการให้เริ่มงานเมื่อไร หรือปัญหาที่ต้องการแก้ไข"></textarea></div>
+          </div>
+          <!-- honeypot: ผู้ใช้จริงจะไม่เห็นช่องนี้ -->
+          <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-primary" type="submit" id="submitBtn" style="width:100%">ส่งแบบฟอร์ม</button>
+          <div class="form-msg" id="formMsg" role="status"></div>
+          <p class="note">ข้อมูลของคุณจะถูกใช้เพื่อติดต่อกลับเท่านั้น และจะไม่เผยแพร่ให้บุคคลภายนอก</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="cols">
+      <div>
+        <div class="logo"><img src="assets/logo.jpg" alt="ริช แอสเซท เมเนเจอร์"></div>
+        <p>บริษัท ริช แอสเซท เมเนเจอร์ จำกัด<br>บริการบริหารนิติบุคคลหมู่บ้านและอาคารชุด</p>
+      </div>
+      <div>
+        <h4>เมนู</h4>
+        <p><a href="#home">หน้าแรก</a><br><a href="#services">บริการ</a><br><a href="#about">เกี่ยวกับเรา</a><br><a href="#contact">ติดต่อเรา</a></p>
+      </div>
+      <div>
+        <h4>ติดต่อ</h4>
+        <p>39/5 หมู่ 5 ต.พิมลราช<br>อ.บางบัวทอง จ.นนทบุรี 11110</p>
+      </div>
+    </div>
+    <div class="bottom">© <span id="year"></span> บริษัท ริช แอสเซท เมเนเจอร์ จำกัด สงวนลิขสิทธิ์</div>
+  </div>
+</footer>
+
+<script>
+// ---- routing (hash-based, ไม่ต้องใช้เซิร์ฟเวอร์พิเศษ) ----
+const pages = ['home', 'services', 'about', 'contact'];
+const menu = document.getElementById('menu');
+const menuBtn = document.getElementById('menuBtn');
+
+function showPage() {
+  const id = (location.hash || '#home').slice(1);
+  const current = pages.includes(id) ? id : 'home';
+  document.querySelectorAll('.page').forEach(s => s.classList.toggle('active', s.id === current));
+  document.querySelectorAll('.nav a[href^="#"]').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+  menu.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded', 'false');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+window.addEventListener('hashchange', showPage);
+showPage();
+
+menuBtn.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ---- แบบฟอร์มขอใบเสนอราคา ----
+const form = document.getElementById('quoteForm');
+const msg = document.getElementById('formMsg');
+const btn = document.getElementById('submitBtn');
+
+function showMsg(text, ok) {
+  msg.textContent = text;
+  msg.className = 'form-msg ' + (ok ? 'ok' : 'err');
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const fd = new FormData(form);
+  const data = {
+    name: fd.get('name')?.trim(),
+    phone: fd.get('phone')?.trim(),
+    email: fd.get('email')?.trim(),
+    units: fd.get('units')?.trim(),
+    project: fd.get('project')?.trim(),
+    type: fd.get('type'),
+    services: fd.getAll('services'),
+    message: fd.get('message')?.trim(),
+    website: fd.get('website') // honeypot
+  };
+
+  if (!data.name || !data.phone || !data.project) {
+    return showMsg('กรุณากรอกชื่อ เบอร์โทร และชื่อโครงการให้ครบถ้วน', false);
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'กำลังส่ง...';
+  msg.className = 'form-msg';
+
+  try {
+    const res = await fetch('/api/quote', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok || !json.ok) throw new Error(json.error || 'ส่งไม่สำเร็จ');
+    form.reset();
+    showMsg('ขอบคุณค่ะ/ครับ ได้รับข้อมูลแล้ว ทีมงานจะติดต่อกลับโดยเร็ว', true);
+  } catch (err) {
+    showMsg('ขออภัย ระบบขัดข้องชั่วคราว กรุณาลองใหม่อีกครั้ง หรือโทรหาเราโดยตรง', false);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'ส่งแบบฟอร์ม';
+  }
+});
+</script>
+</body>
+</html>
